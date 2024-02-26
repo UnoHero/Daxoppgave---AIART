@@ -3,6 +3,7 @@
   --container-padding: 10px;
 }
 
+/*all pages*/
 body {
   margin: 0;
   padding: 0;
@@ -21,17 +22,20 @@ header {
   padding: var(--container-padding);
 }
 
+div {
+  margin: auto;
+  text-align: center;
+}
+
+/* index only*/
+
 #IMAGE {
   max-width: 80%;
   height: auto;
   margin: auto;
 }
 
-div {
-  margin: auto;
-  text-align: center;
-}
-
+/* Lik to the gallery page */
 #galleriLink {
   display: block;
   padding: 5%;
@@ -50,6 +54,9 @@ div {
   height: auto;
 }
 
+
+/* gallery only */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
@@ -63,7 +70,7 @@ div {
   cursor: pointer;
 }
 
-/* Modal */
+/* Modal popup*/
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -104,14 +111,7 @@ div {
   cursor: pointer;
 }
 
-
-
-/* Adjusted for two pictures in width */
-@media (min-width: 620px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, calc(50% - 5px))); /* Two pictures in width with a 10px gap */
-  }
-}
+/*Responsive web site smal first*/
 
 /* Small screens */
 @media (min-width: 0px) {
@@ -124,6 +124,9 @@ div {
 @media (min-width: 620px) {
   .container {
     padding: 20px;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, calc(50% - 5px))); /* Two pictures in width with a 10px gap */
   }
 }
 
