@@ -1,0 +1,79 @@
+:root {
+  --header-height: 60px;
+  --container-padding: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  height: var(--header-height);
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.container {
+  padding: var(--container-padding);
+}
+
+#IMAGE {
+  max-width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+div {
+  margin: auto;
+  text-align: center;
+}
+
+#galleriLink {
+  display: block;
+  padding: 5%;
+  font-size: x-large;
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjusted height for better responsiveness */
+}
+
+.slideshow img {
+  width: 80%; /* Set all images to fill 80% of the container width */
+  height: auto;
+}
+
+/* Small screens */
+@media (min-width: 0px) {
+  .container {
+    padding: 10px; /* Smaller padding for small screens */
+  }
+}
+
+/* Medium screens */
+@media (min-width: 620px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 960px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .container {
+    padding: 30px;
+  }
+}
