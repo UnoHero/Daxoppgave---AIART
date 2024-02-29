@@ -27,21 +27,32 @@ document.addEventListener("DOMContentLoaded", function() {
     "../assets/media/images/DALL·E 2024-02-25 17.21.38 - Imagine an engaging scene of four people, two men and two women, sitting around a poker table, deeply focused on their game. Each player represents a .webp",
     "../assets/media/images/DALL·E 2024-02-25 17.21.42 - Imagine an engaging scene of four people, two men and two women, sitting around a poker table, deeply focused on their game. Each player represents a .webp",
   ];
-  let currentImageIndex = 1;
+  let currentImageIndex = 0;
   const galleryImg = document.getElementById("slideshowImg");
 
   function changeImage() {
-    if ( imageFilenames.length === 0) {
-
-    galleryImg.src = ""; // Clear the image source
+    if (imageFilenames.length === 0) {
+      galleryImg.src = ""; // Clear the image source
       galleryImg.alt = "No pictures found"; // Set alt text for accessibility
       galleryImg.style.display = "none"; // Hide the image element
-      alert("\O/ AI MAKES NO ART, MAKE SOME INSTEAD, OR LEAVE THAT TO SUCKERBURGZ <3");
+      alert(`\O/ AI MAKES NO ART, MAKE SOME INSTEAD, OR LEAVE THAT TO SUCKERBURGZ <3`);
     } else {
+      // Fade out the current image
+      galleryImg.classList.remove("active");
+      // Set the source of the next image
       galleryImg.src = imageFilenames[currentImageIndex];
+      // Fade in the next image
+      galleryImg.classList.add("active");
+      // Update currentImageIndex for the next iteration
       currentImageIndex = (currentImageIndex + 1) % imageFilenames.length;
     }
   }
 
-  setInterval(changeImage, 2000); // Change image every 3 seconds (adjust as needed)
+  // Add event listener for transitionend event
+  galleryImg.addEventListener("transitionend", function() {
+    // Remove "active" class from the previous image after the transition ends
+    galleryImg.classList.remove("active");
+  });
+
+  setInterval(changeImage, 2000); // Change image every 2 seconds (adjust as needed)
 });
