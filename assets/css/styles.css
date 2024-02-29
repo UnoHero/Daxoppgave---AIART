@@ -30,16 +30,9 @@ div {
 /* index only*/
 
 #IMAGE {
-  max-width: 80%;
+  max-width: 60%;
   height: auto;
   margin: auto;
-}
-
-/* Lik to the gallery page */
-#galleriLink {
-  display: block;
-  padding: 5%;
-  font-size: x-large;
 }
 
 .slideshow {
@@ -47,13 +40,27 @@ div {
   justify-content: center;
   align-items: center;
   height: auto; /* Adjusted height for better responsiveness */
+  position: relative; /* Add relative positioning to the container */
 }
 
 .slideshow img {
-  width: 80%; /* Set all images to fill 80% of the container width */
+  width: 60%; /* Set all images to fill 80% of the container width */
   height: auto;
+  opacity: 0; /* Initially hide the images */
+  transition: opacity 1.5s ease; /* Add a transition effect for opacity */
 }
 
+.slideshow img.active {
+  opacity: 1; /* Make the active image visible */
+}
+
+
+/* Lik to the gallery page */
+#galleriLink {
+  display: block;
+  padding: 5%;
+  font-size: x-large;
+}
 
 /* gallery only */
 
@@ -91,6 +98,10 @@ div {
   max-width: 800px;
   max-height: 80%;
 
+}
+
+.modal-image:hover {
+  box-shadow: 0 0 10px 0 black;
 }
 
 /* Close Button */
